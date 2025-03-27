@@ -1,5 +1,8 @@
 package com.example.ClassRoomApp.Models;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Course {
     private Integer idCourse;
     private String name;
