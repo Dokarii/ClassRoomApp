@@ -1,10 +1,16 @@
 package com.example.ClassRoomApp.Models;
-
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "courses")
 public class Course {
-    private Integer idCourse;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idCourse")
+    private Integer id;
+
+    @Column(name = "nombre", length = 100, unique = false, nullable = false)
     private String name;
     //idProfessor
 
@@ -12,17 +18,17 @@ public class Course {
     public Course() {
     }
 
-    public Course(Integer idCourse, String name) {
-        this.idCourse = idCourse;
+    public Course(Integer id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public Integer getIdCourse() {
-        return idCourse;
+    public Integer getid() {
+        return id;
     }
 
-    public void setIdCourse(Integer idCourse) {
-        this.idCourse = idCourse;
+    public void setid(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
