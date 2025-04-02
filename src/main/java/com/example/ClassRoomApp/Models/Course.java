@@ -1,6 +1,10 @@
 package com.example.ClassRoomApp.Models;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "courses")
@@ -11,16 +15,19 @@ public class Course {
     @Column(name = "idCourse")
     private Integer id;
 
-    @Column(name = "nombre", length = 100, unique = false, nullable = false)
+    @Column(name = "name", length = 100, unique = false, nullable = false)
     private String name;
 
     //Creating ManyToOne relation
     @ManyToOne
-    @JoinColumn(name = "fk_professor", referencedColumnName = "Id")
+    @JoinColumn(name = "fk_proffessor", referencedColumnName = "id")
     @JsonBackReference
     private Professor professor;
 
-    //idProfessor
+    //1toMany relations
+    @OneToMany(mappedBy = "course")//=Como es conocido esta tabla en la tabla asistencias
+    @JsonManagedReference//la que tenga la one lleva jsonmanage
+    private List<Attendance> attendance;
 
 
     public Course() {

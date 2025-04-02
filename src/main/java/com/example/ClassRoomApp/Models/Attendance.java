@@ -56,11 +56,11 @@ public class Attendance {
         this.date = date;
     }
 
-    public com.example.ClassRoomApp.Models.Status getStatus() {
+    public Status getStatus() {
         return Status;
     }
 
-    public void setStatus(com.example.ClassRoomApp.Models.Status status) {
+    public void setStatus(Status status) {
         Status = status;
     }
 }
