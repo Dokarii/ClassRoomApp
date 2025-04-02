@@ -1,24 +1,39 @@
 package com.example.ClassRoomApp.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
 public class Subject {
-    private Integer idSubject;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idSubject")
+    private Integer id;
+
+    @Column(name = "speciality", length = 100, nullable = false)
     private String name;
-    //idCurso
+
+    @OneToMany(mappedBy = "subject")
+    @JsonManagedReference//la que tenga la one lleva jsonmanage
+    private List<Grade> grades;
 
     public Subject() {
     }
 
-    public Subject(Integer idSubject, String name) {
-        this.idSubject = idSubject;
+    public Subject(Integer id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public Integer getIdSubject() {
-        return idSubject;
+    public Integer getid() {
+        return id;
     }
 
-    public void setIdSubject(Integer idSubject) {
-        this.idSubject = idSubject;
+    public void setid(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
