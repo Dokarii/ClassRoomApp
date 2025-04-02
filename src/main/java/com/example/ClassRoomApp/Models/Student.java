@@ -3,7 +3,7 @@ package com.example.ClassRoomApp.Models;
 import java.util.Date;
 
 public class Student {
-    private Integer id_estudent;
+    private Integer id_student;
     //id_user
     private Integer grade;
     private Date born_day;
@@ -12,19 +12,19 @@ public class Student {
     public Student() {
     }
 
-    public Student(Integer id_estudent, Integer grade, Date born_day, String address) {
-        this.id_estudent = id_estudent;
+    public Student(Integer id_student, Integer grade, Date born_day, String address) {
+        this.id_student = id_student;
         this.grade = grade;
         this.born_day = born_day;
         this.address = address;
     }
 
-    public Integer getid_estudent() {
-        return id_estudent;
+    public Integer getid_student() {
+        return id_student;
     }
 
-    public void setid_estudent(Integer id_estudent) {
-        this.id_estudent = id_estudent;
+    public void setid_student(Integer id_student) {
+        this.id_student = id_student;
     }
 
     public Integer getGrade() {
