@@ -1,29 +1,51 @@
 package com.example.ClassRoomApp.Models;
 
-import java.util.Date;
+import com.example.ClassRoomApp.Helpers.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 
+import java.util.Date;
+@Entity
+@Table(name = "Attendances")
 public class Attendance {
-    private Integer idAttendance;
-    //IdEstudiante
-    //Idcurso
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idAttendance")
+    private Integer id;
+
+    @Column(name = "date", nullable = false)
     private Date date;
+
+    @Column(name = "status", nullable = false)
     private Status Status;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_student", referencedColumnName = "id")
+    @JsonBackReference//la que tenga la many lleva jsonback
+    private Student student;
+
+    //creando relacion(muchos a 1) con cursos
+    @ManyToOne
+    @JoinColumn(name = "fk_course", referencedColumnName = "id")
+    @JsonBackReference//la que tenga la many lleva jsonback
+    private Course course;
 
     public Attendance() {
     }
 
-    public Attendance(Integer idAttendance, Date date, com.example.ClassRoomApp.Models.Status status) {
-        this.idAttendance = idAttendance;
+    public Attendance(Integer id, Date date, Status status) {
+        this.id = id;
         this.date = date;
         Status = status;
     }
 
-    public Integer getIdAttendance() {
-        return idAttendance;
+    public Integer getIdAssistance() {
+        return id;
     }
 
-    public void setIdAttendance(Integer idAttendance) {
-        this.idAttendance = idAttendance;
+    public void setIdAssistance(Integer id) {
+        this.id = id;
     }
 
     public Date getDate() {
