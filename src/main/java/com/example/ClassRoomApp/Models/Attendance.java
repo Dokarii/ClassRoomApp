@@ -41,7 +41,7 @@ public class Attendance {
     }
 
     public Integer getIdAssistance() {
-        return id; //
+        return id;
     }
 
     public void setIdAssistance(Integer id) {
