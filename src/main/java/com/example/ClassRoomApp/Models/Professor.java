@@ -9,7 +9,7 @@ import java.util.List;
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "idProfessor")
     private Integer id;
     
     
