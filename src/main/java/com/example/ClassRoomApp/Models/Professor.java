@@ -8,7 +8,11 @@ import java.util.List;
 @Entity
 public class Professor {
     @Id
-    private Integer idProfessor;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+    
+    
     private String speciality;
 
     //Creating @OneToMany relation
@@ -19,17 +23,17 @@ public class Professor {
     public Professor() {
     }
 
-    public Professor(Integer idProfessor, String speciality) {
-        this.idProfessor = idProfessor;
+    public Professor(Integer id, String speciality) {
+        this.id = id;
         this.speciality = speciality;
     }
 
-    public Integer getIdProfessor() {
-        return idProfessor;
+    public Integer getid() {
+        return id;
     }
 
-    public void setIdProfessor(Integer idProfessor) {
-        this.idProfessor = idProfessor;
+    public void setid(Integer id) {
+        this.id = id;
     }
 
     public String getSpeciality() {
