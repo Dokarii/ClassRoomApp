@@ -7,10 +7,11 @@ import java.util.List;
 
 @Entity
 public class Professor {
+    @Id
     private Integer idProfessor;
     private String speciality;
 
-    //Creating OneToMany relation
+    //Creating @OneToMany relation
     @OneToMany(mappedBy = "professor")
     @JsonManagedReference
     private List<Course> courses;
