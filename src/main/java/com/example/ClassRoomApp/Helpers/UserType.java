@@ -1,4 +1,4 @@
-package com.example.ClassRoomApp.Models;
+package com.example.ClassRoomApp.Helpers;
 
 public enum UserType {
     Student,

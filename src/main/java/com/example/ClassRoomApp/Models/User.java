@@ -1,5 +1,7 @@
 package com.example.ClassRoomApp.Models;
 
+import com.example.ClassRoomApp.Helpers.UserType;
+
 public class User {
     private Integer idUser;
     private String name;
