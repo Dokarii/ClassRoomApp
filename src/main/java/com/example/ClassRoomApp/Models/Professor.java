@@ -1,13 +1,13 @@
 package com.example.ClassRoomApp.Models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Professor {
     private Integer idProfessor;
-    //IdUser
     private String speciality;
 
     //Creating OneToMany relation
