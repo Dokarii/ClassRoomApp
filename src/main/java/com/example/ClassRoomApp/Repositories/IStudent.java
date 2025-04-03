@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IStudent extends  JpaRepository<Student, Integer>{
-
     //Si tengo consultas personalizadas, deben ir en este espacio
 }
