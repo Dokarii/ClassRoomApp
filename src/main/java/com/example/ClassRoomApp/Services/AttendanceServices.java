@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AttendanceService {
+public class AttendanceServices {
     @Autowired
-    IAttendance attendance;
+    IAttendance repository;
 
-    public Attendance saveAttendance(Attendance attendanceDatas) {
-        try {
-            return this.attendance.save(attendanceDatas);
-        } catch (Exception e) {
-            throw new RuntimeException();
+    public Attendance saveAssistance(Attendance assistance)throws Exception{
+        try{
+            return this.repository.save(assistance);
+        }catch (Exception error){
+            throw new RuntimeException(error.getMessage());
         }
     }
 }

@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InscriptionService {
+public class InscriptionServices {
     @Autowired
     IInscription repository;
-    //Crear los metodos para guardar
-    public Inscription saveInscription(Inscription inscriptionDatas){
+
+    public Inscription saveRegistration(Inscription registration)throws Exception{
         try{
-            return this.repository.save(inscriptionDatas);
-        } catch (Exception e) {
-            throw new RuntimeException();
+            return this.repository.save(registration);
+        }catch (Exception error){
+            throw new RuntimeException(error.getMessage());
         }
     }
 }
