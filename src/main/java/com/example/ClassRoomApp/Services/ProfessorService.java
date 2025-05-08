@@ -13,7 +13,7 @@ public class ProfessorService {
     @Autowired
     IProfessorRepository repository;
 
-    //guardar
+    //save
     public Professor saveTeacher(Professor teacher)throws Exception{
         try {
             return this.repository.save(teacher);
